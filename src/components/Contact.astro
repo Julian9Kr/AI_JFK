@@ -1,0 +1,59 @@
+---
+// Contact component
+---
+
+<section id="contact" class="contact">
+  <div class="container">
+    <h2 class="section-title">Contact</h2>
+    <div class="contact-content">
+      <p>
+        Interested in working together? Let's create something extraordinary. 
+        Reach out to discuss your project, collaboration opportunities, or just to say hello.
+      </p>
+      <div class="contact-links">
+        <a href="mailto:hello@jfkrueger.com" class="contact-link">Email</a>
+        <a href="https://instagram.com/jfkrueger" class="contact-link">Instagram</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .contact {
+    padding: 8rem 0;
+  }
+  
+  .contact-content {
+    display: flex;
+    flex-direction: column;
+    max-width: 600px;
+  }
+  
+  .contact-content p {
+    margin-bottom: 2rem;
+  }
+  
+  .contact-links {
+    display: flex;
+    gap: 2rem;
+  }
+  
+  .contact-link {
+    padding: 1rem 2rem;
+    border: 1px solid white;
+    border-radius: 100px;
+    transition: all 0.3s ease;
+  }
+  
+  .contact-link:hover {
+    background: white;
+    color: black;
+    opacity: 1;
+  }
+  
+  @media (max-width: 640px) {
+    .contact-links {
+      flex-direction: column;
+    }
+  }
+</style>

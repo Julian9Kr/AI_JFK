@@ -1,0 +1,76 @@
+---
+// Portfolio component
+---
+
+<section class="portfolio">
+  <div class="container">
+    <h2 class="section-title">Portfolio</h2>
+    <div class="portfolio-grid">
+      <div class="portfolio-item">
+        <img src="/_rooftop.jpg" alt="Rooftop Scene" />
+      </div>
+      <div class="portfolio-item">
+        <img src="/_sprayer.jpg" alt="Street Art" />
+      </div>
+      <div class="portfolio-item">
+        <img src="/choc_berry.jpg" alt="Food Photography" />
+      </div>
+      <div class="portfolio-item">
+        <img src="/fashion_.jpg" alt="Fashion Photography" />
+      </div>
+      <div class="portfolio-item">
+        <img src="/0402_ai_people_018.jpg" alt="AI Generated People" />
+      </div>
+      <div class="portfolio-item">
+        <img src="/header_bull.jpg" alt="Bull Header Image" />
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .portfolio {
+    padding: 4rem 0 8rem;
+  }
+  
+  .portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
+  
+  .portfolio-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+    aspect-ratio: 16/12;
+  }
+  
+  .portfolio-item:hover {
+    transform: translateY(-5px);
+  }
+  
+  .portfolio-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+  }
+  
+  .portfolio-item:hover img {
+    transform: scale(1.05);
+  }
+  
+  @media (max-width: 1024px) {
+    .portfolio-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  @media (max-width: 640px) {
+    .portfolio-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
