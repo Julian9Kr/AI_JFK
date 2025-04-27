@@ -1,1 +1,115 @@
-body{margin:0;font-family:sans-serif;background:#0f0f0f;color:white;}a{color:#1fe;text-decoration:none;}nav{background:rgba(0,0,0,0.8);padding:1rem;position:fixed;width:100%;top:0;} .container{max-width:1200px;margin:auto;padding:6rem 1rem 2rem;} .grid{display:grid;gap:1rem;} .card{border-radius:8px;overflow:hidden;} img,video{border-radius:8px;}
+/* 1) Base & Reset */
+*,
+*::before,
+*::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Inter', sans-serif;
+  background: #0a0a0a;
+  color: white;
+  line-height: 1.5;
+  overflow-x: hidden;
+}
+
+/* 2) Sticky Nav Like Hochkant */
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  padding: 1rem 2rem;
+  display: flex; justify-content: space-between; align-items: center;
+  z-index: 50;
+  transition: background 0.3s ease, backdrop-filter 0.3s ease;
+}
+nav.transparent {
+  background: transparent;
+}
+nav.solid {
+  background: rgba(10,10,10,0.8);
+  backdrop-filter: blur(10px);
+}
+nav a { color: white; font-weight: 500; margin-left: 2rem; }
+nav a:hover { opacity: 0.8; }
+
+/* 3) Hero: Full‐height Panel */
+.hero {
+  height: 100vh;
+  background: url('/uploads/hero-bg.jpg') center/cover no-repeat;
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  padding: 0 2rem 10vh;
+}
+.hero-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+}
+.hero-content {
+  position: relative; max-width: 800px;
+}
+.hero h1 {
+  font-size: clamp(2.5rem, 6vw, 5rem);
+  line-height: 1.1;
+  margin-bottom: 1rem;
+}
+.hero p {
+  font-size: clamp(1rem, 2.5vw, 1.5rem);
+  opacity: 0.85;
+}
+
+/* 4) Section Panels (Edge-to-Edge) */
+.section {
+  width: 100vw;
+  position: relative;
+  left: 50%; transform: translateX(-50%);
+  padding: 6rem 2rem;
+}
+.section.alt {
+  background: #111;
+}
+.section .container {
+  max-width: 1200px; margin: auto;
+}
+.section-title {
+  font-size: 2rem; margin-bottom: 2rem;
+  position: relative; display: inline-block;
+}
+.section-title::after {
+  content: ''; position: absolute; bottom: -8px;
+  left: 0; width: 60px; height: 3px; background: #2dd4bf;
+}
+
+/* 5) Grid Cards with Hover Lifts */
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
+  gap: 2rem;
+}
+.card {
+  background: #1a1a1a;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 24px rgba(0,0,0,0.5);
+}
+.card img, .card video {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.card h3 {
+  margin: 1rem; font-size: 1.25rem;
+}
+.card p {
+  margin: 0 1rem 1rem;
+  color: #888; font-size: 0.9rem;
+}
+
+/* 6) Responsive */
+@media (max-width: 768px) {
+  .hero { padding-bottom: 5vh; }
+  .hero h1 { font-size: 2.5rem; }
+  nav a { margin-left: 1rem; font-size: 0.95rem; }
+}
