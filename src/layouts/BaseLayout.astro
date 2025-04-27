@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="en">
 <head>
   <meta charset="UTF-8"/><meta name="viewport"content="width=device-width,initial-scale=1.0"/>
   <title>Julian F. Krueger</title>
@@ -8,18 +8,11 @@
 <body>
   <header>
     <div class="logo">Julian F. Krueger</div>
-    <nav>
-      <ul>
-        <li><a href="/">Home</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
+    <nav><ul><li><a href="/">Home</a></li><li><a href="#projects">Projects</a></li><li><a href="#about">About</a></li><li><a href="#contact">Contact</a></li></ul></nav>
   </header>
   <slot/>
   <script>
-    document.querySelectorAll('a[href^="#"]').forEach(anchor=>anchor.addEventListener('click',e=>{e.preventDefault();document.querySelector(anchor.getAttribute('href')).scrollIntoView({behavior:'smooth'});}));
+    document.querySelectorAll('a[href^="#"]').forEach(a=>a.addEventListener('click',e=>{e.preventDefault();document.querySelector(a.getAttribute('href')).scrollIntoView({behavior:'smooth'});}));
     window.addEventListener('scroll',()=>{document.querySelector('header').style.backgroundColor=window.scrollY>50?'rgba(0,0,0,1)':'rgba(0,0,0,0.9)';});
   </script>
 </body>

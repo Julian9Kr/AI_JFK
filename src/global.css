@@ -1,4 +1,4 @@
-/* Reset & Base */
+/* Base Reset */
 *{margin:0;padding:0;box-sizing:border-box;font-family:'Helvetica Neue',Arial,sans-serif;}
 body{background:#000;color:#fff;line-height:1.6;overflow-x:hidden;}
 a{color:#fff;text-decoration:none;transition:opacity .3s;}
@@ -9,16 +9,12 @@ nav{position:fixed;top:0;left:0;width:100%;padding:1rem 5%;background:rgba(0,0,0
 nav ul{display:flex;list-style:none;}
 nav li{margin-left:2rem;}
 nav a{text-transform:uppercase;letter-spacing:1px;font-weight:500;}
-.hero{height:100vh;display:flex;flex-direction:column;justify-content:center;padding:0 5%;position:relative;background:url('/uploads/hero-bg.jpg')center/cover no-repeat;}
-.hero h1{font-size:4rem;font-weight:800;line-height:1.2;margin-bottom:1rem;}
-.hero p{font-size:1.5rem;max-width:600px;margin-bottom:2rem;}
-.scroll-indicator{position:absolute;bottom:2rem;left:5%;font-size:.9rem;letter-spacing:2px;display:flex;align-items:center;}
-.scroll-indicator::after{content:'';height:1px;width:50px;background:#fff;margin-left:1rem;animation:scroll 1.5s infinite;}
-@keyframes scroll{0%,100%{width:50px;}50%{width:100px;}}
+.hero{height:100vh;display:flex;justify-content:center;align-items:center;padding:0 5%;position:relative;background:#111;}
+.hero video{width:100%;height:100%;object-fit:cover;}
+.scroll-indicator{position:absolute;bottom:2rem;left:5%;font-size:.9rem;letter-spacing:2px;}
 .horizontal-section{height:100vh;width:100%;overflow-x:scroll;display:flex;padding:10vh 0;}
 .horizontal-content{display:flex;height:80vh;}
-.project-card{min-width:70vw;height:100%;margin-right:5vw;position:relative;overflow:hidden;}
-.project-card:first-child{margin-left:5vw;}
+.project-card{min-width:70vw;height:100%;margin-right:5vw;overflow:hidden;}
 .project-image{width:100%;height:70%;overflow:hidden;background:#333;}
 .project-image img, .project-image video{width:100%;height:100%;object-fit:cover;}
 .project-info{padding:2rem 0;}
@@ -29,19 +25,5 @@ nav a{text-transform:uppercase;letter-spacing:1px;font-weight:500;}
 .about{min-height:100vh;padding:15vh 5% 10vh;}
 .about h2{font-size:3rem;margin-bottom:2rem;}
 .about-content{display:grid;grid-template-columns:1fr 1fr;gap:5rem;}
-.about-bio p{font-size:1.2rem;margin-bottom:1.5rem;}
-.skills-list{list-style:none;display:flex;flex-wrap:wrap;}
-.skills-list li{margin-right:2rem;margin-bottom:1rem;font-size:1.1rem;}
 .contact{min-height:50vh;padding:10vh 5% 15vh;}
-.contact h2{font-size:3rem;margin-bottom:2rem;}
-.contact-info p{font-size:1.2rem;margin-bottom:1.5rem;}
-.contact-links{display:flex;}
-.contact-link{margin-right:2rem;font-size:1.1rem;letter-spacing:1px;text-transform:uppercase;position:relative;}
-.contact-link::after{content:'';position:absolute;bottom:-5px;left:0;width:100%;height:1px;background:#fff;}
-footer{padding:3rem 5%;border-top:1px solid rgba(255,255,255,.2);display:flex;justify-content:space-between;}
-footer p{font-size:.9rem;opacity:.7;}
-footer ul{display:flex;list-style:none;}
-footer li{margin-left:2rem;}
-footer a{font-size:.9rem;opacity:.7;}
-@media(max-width:768px){.hero h1{font-size:3rem;} .about-content{grid-template-columns:1fr;gap:3rem;} .project-card{min-width:90vw;} }
-@media(max-width:576px){nav{display:none;} .hero h1{font-size:2.5rem;} .about h2, .contact h2{font-size:2.5rem;} }
+.footer{padding:3rem 5%;border-top:1px solid rgba(255,255,255,.2);display:flex;justify-content:space-between;}
