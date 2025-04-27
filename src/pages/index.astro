@@ -1,26 +1,30 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import about from '../content/about/index.md';
-import projects from '../content/projects/*.md';
+const modProjects = import.meta.glob('../../content/projects/*.md', { eager: true });
+const projects = Object.values(modProjects).map(m => m.frontmatter);
+const modAbout = import.meta.glob('../../content/about/index.md', { eager: true });
+const aboutFile = Object.values(modAbout)[0];
+const aboutData = aboutFile.frontmatter;
+const aboutHtml = aboutFile.compiledContent;
 ---
 <BaseLayout>
   <section class="hero" id="home">
-    <h1>Digital Designer<br>& Developer</h1>
-    <p>Creating innovative digital experiences that blend form and function.</p>
+    <h1>{aboutData.heroHeading}</h1>
+    <p>{aboutData.heroText}</p>
     <div class="scroll-indicator">Scroll</div>
   </section>
 
   <section class="horizontal-section" id="projects">
     <div class="horizontal-content">
-      {Object.values(projects).map(({ frontmatter }) => (
+      {projects.map(p => (
         <div class="project-card">
           <div class="project-image">
-            {frontmatter.video ? <video src={frontmatter.video} controls /> : <img src={frontmatter.image} />}
+            <img src={p.image} alt={p.title} />
           </div>
           <div class="project-info">
-            <h3>{frontmatter.title}</h3>
-            <p>{frontmatter.description}</p>
-            {frontmatter.link && <a href={frontmatter.link} class="project-link">View Project</a>}
+            <h3>{p.title}</h3>
+            <p>{p.description}</p>
+            <a href={p.link} class="project-link">View Project</a>
           </div>
         </div>
       ))}
@@ -29,29 +33,33 @@ import projects from '../content/projects/*.md';
 
   <section class="about" id="about">
     <h2>About</h2>
-    <div class="about-content container" set:html={about.compiledContent}/>
+    <div class="about-content container" set:html={aboutHtml} />
     <div class="skills">
       <h3>Skills</h3>
       <ul class="skills-list">
-        {about.data.skills.map(skill=><li>{skill}</li>)}
+        {aboutData.skills.map(skill => <li>{skill}</li>)}
       </ul>
     </div>
   </section>
 
   <section class="contact" id="contact">
     <h2>Contact</h2>
-    <div class="contact-info container">
-      <p>{about.data.contactText}</p>
+    <div class="contact-info">
+      <p>{aboutData.contactText}</p>
       <div class="contact-links">
-        {about.data.contactLinks.map(link=>(
-          <a href={link.url} class="contact-link" target="_blank">{link.label}</a>
-        ))}
+        {aboutData.contactLinks.map(link => <a href={link.url} class="contact-link" target="_blank">{link.label}</a>)}
       </div>
     </div>
   </section>
 
   <footer>
     <div class="footer-left"><p>&copy; 2025 Julian F. Krueger. All Rights Reserved.</p></div>
-    <div class="footer-right"><ul><li><a href="#projects">Projects</a></li><li><a href="#about">About</a></li><li><a href="#contact">Contact</a></li></ul></div>
+    <div class="footer-right">
+      <ul>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
   </footer>
 </BaseLayout>
