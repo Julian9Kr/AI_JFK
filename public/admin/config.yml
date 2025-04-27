@@ -7,18 +7,14 @@ public_folder: "/uploads"
 
 collections:
   - name: "about"
-    label: "About"
+    label: "About Page"
     files:
       - file: "content/about/index.md"
         label: "About Content"
         name: "about"
         fields:
-          - {label: "Hero Heading", name: "heroHeading", widget: "string"}
-          - {label: "Hero Text", name: "heroText", widget: "string"}
           - {label: "Body", name: "body", widget: "markdown"}
-          - {label: "Skills", name: "skills", widget: "list"}
-          - {label: "Contact Text", name: "contactText", widget: "text"}
-          - {label: "Contact Links", name: "contactLinks", widget: "list", label: "Links", field:{label:"Link",name:"link",widget:"object",fields:[{label:"Label",name:"label",widget:"string"},{label:"URL",name:"url",widget:"string"}]}}  
+
   - name: "projects"
     label: "Projects"
     folder: "content/projects"
@@ -27,5 +23,5 @@ collections:
     fields:
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Image", name: "image", widget: "image"}
-      - {label: "Description", name: "description", widget: "text"}
-      - {label: "Link", name: "link", widget: "string"}
+      - {label: "Category", name: "category", widget: "select", options: ["AI storytelling","Real Shot / Live Action","Virtual Production","Post Production"]}
+      - {label: "Description", name: "description", widget: "markdown"}

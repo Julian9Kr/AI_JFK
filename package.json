@@ -1,5 +1,5 @@
 {
-  "name": "jfk-original-design-cms",
+  "name": "jfk-cms-astro-site",
   "version": "1.0.0",
   "scripts": {
     "dev": "astro dev",
@@ -7,8 +7,6 @@
     "preview": "astro preview"
   },
   "dependencies": {
-    "astro": "^4.15.0",
-    "netlify-cms": "^latest",
-    "sharp": "^0.32.0"
+    "astro": "^4.0.0"
   }
 }

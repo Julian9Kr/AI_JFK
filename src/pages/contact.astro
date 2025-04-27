@@ -1,4 +1,8 @@
 ---
-import { redirect } from 'astro/server';
-export function get() { return redirect('/#contact', 307); }
+import BaseLayout from '../layouts/BaseLayout.astro';
 ---
+<BaseLayout>
+<section class="container">
+<h1>Contact</h1><p><a href="mailto:hello@julianfkrueger.com">Email me</a></p>
+</section>
+</BaseLayout>

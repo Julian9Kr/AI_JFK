@@ -1,4 +1,22 @@
 ---
-import { redirect } from 'astro/server';
-export function get() { return redirect('/#projects', 307); }
+import BaseLayout from '../layouts/BaseLayout.astro';
+const entries = Object.values(import.meta.glob('../../content/projects/*.md', { eager: true })).map(p => p.frontmatter);
 ---
+<BaseLayout>
+<section class="container">
+<h1>Portfolio</h1>
+<label>Filter:</label>
+<select id="filter" onChange="filterProjects()"><option>All</option><option>AI storytelling</option><option>Real Shot / Live Action</option><option>Virtual Production</option><option>Post Production</option></select>
+<div id="projects" class="grid" style="grid-template-columns:repeat(3,1fr)">
+  {entries.map(p => (
+    <div class="card" data-cat={p.category}><img src={p.image} alt={p.title}/><h3>{p.title}</h3></div>
+  ))}
+</div>
+</section>
+<script is:inline>
+function filterProjects(){
+  const val=document.getElementById('filter').value;
+  document.querySelectorAll('.card').forEach(c=>{c.style.display=(val==='All'||c.dataset.cat===val)?'block':'none';});
+}
+</script>
+</BaseLayout>
