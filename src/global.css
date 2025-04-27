@@ -1,6 +1,1 @@
-body { margin: 0; font-family: sans-serif; background: #0f0f0f; color: white; }
-a { color: #1fe; text-decoration: none; }
-nav { background: rgba(0,0,0,0.8); padding: 1rem; position: fixed; width:100%; top:0; }
-.container { max-width: 1200px; margin: auto; padding: 6rem 1rem 2rem; }
-.grid { display: grid; gap: 1rem; }
-.card { border-radius:8px; overflow:hidden; }
+body{margin:0;font-family:sans-serif;background:#0f0f0f;color:white;}a{color:#1fe;text-decoration:none;}nav{background:rgba(0,0,0,0.8);padding:1rem;position:fixed;width:100%;top:0;} .container{max-width:1200px;margin:auto;padding:6rem 1rem 2rem;} .grid{display:grid;gap:1rem;} .card{border-radius:8px;overflow:hidden;} img,video{border-radius:8px;}

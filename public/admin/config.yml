@@ -9,19 +9,19 @@ collections:
   - name: "about"
     label: "About Page"
     files:
-      - file: "src/content/about/index.md"
+      - file: "content/about/index.md"
         label: "About Content"
         name: "about"
         fields:
-          - { label: "Body", name: "body", widget: "markdown" }
+          - {label: "Body", name: "body", widget: "markdown"}
 
   - name: "projects"
     label: "Projects"
-    folder: "src/content/projects"
+    folder: "content/projects"
     create: true
     slug: "{{slug}}"
     fields:
-      - { label: "Title", name: "title", widget: "string" }
-      - { label: "Image", name: "image", widget: "image" }
-      - { label: "Category", name: "category", widget: "select", options: ["AI storytelling","Real Shot / Live Action","Virtual Production","Post Production"] }
-      - { label: "Description", name: "description", widget: "markdown" }
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Image", name: "image", widget: "image"}
+      - {label: "Category", name: "category", widget: "select", options: ["AI storytelling","Real Shot / Live Action","Virtual Production","Post Production"]}
+      - {label: "Description", name: "description", widget: "markdown"}

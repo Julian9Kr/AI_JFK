@@ -1,21 +1,16 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import projects from '../content/projects/*.md';
-const featured = Object.values(projects).slice(0,3);
+const projects = Object.values(import.meta.glob('../../content/projects/*.md', { eager: true })).map(p => p.frontmatter).slice(0,3);
 ---
 <BaseLayout>
-  <section class="container">
-    <h1>Future storytelling through AI, grounded in real-world filmmaking.</h1>
-    <p>I'm Julian F. Krueger, specializing in AI visuals, virtual production, and narrative direction.</p>
-    <h2>Featured Projects</h2>
-    <div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(200px,1fr));">
-      {featured.map(({ metadata }) => (
-        <div class="card" data-cat={metadata.category}>
-          <img src={metadata.image} alt={metadata.title} style="width:100%;"/>
-          <h3>{metadata.title}</h3>
-          <p>{metadata.category}</p>
-        </div>
-      ))}
-    </div>
-  </section>
+<section class="container">
+  <h1>Future storytelling through AI, grounded in real-world filmmaking.</h1>
+  <p>I'm Julian F. Krueger, specializing in AI visuals, virtual production, and narrative direction.</p>
+  <h2>Featured Projects</h2>
+  <div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(200px,1fr));">
+    {projects.map(p => (
+      <div class="card"><img src={p.image} alt={p.title}/><h3>{p.title}</h3><p>{p.category}</p></div>
+    ))}
+  </div>
+</section>
 </BaseLayout>
