@@ -1,4 +1,4 @@
 ---
-import { redirect } from 'astro/runtime';
+import { redirect } from 'astro/server';
 export function get() { return redirect('/#about', 307); }
 ---
