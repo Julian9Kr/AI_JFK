@@ -12,8 +12,7 @@
   </header>
   <slot/>
   <script>
-    document.querySelectorAll('a[href^="#"]').forEach(a=>a.addEventListener('click',e=>{e.preventDefault();document.querySelector(a.getAttribute('href')).scrollIntoView({behavior:'smooth'});}));
-    window.addEventListener('scroll',()=>{document.querySelector('header').style.backgroundColor=window.scrollY>50?'rgba(0,0,0,1)':'rgba(0,0,0,0.9)';});
+    document.querySelectorAll('a[href^="#"]').forEach(a=>a.addEventListener('click',e=>{e.preventDefault();document.querySelector(a.getAttribute('href')).scrollIntoView({behavior:'smooth'});}))  ;    window.addEventListener('scroll',()=>{document.querySelector('header').style.backgroundColor=window.scrollY>50?'rgba(0,0,0,1)':'rgba(0,0,0,0.9)';});
   </script>
 </body>
 </html>

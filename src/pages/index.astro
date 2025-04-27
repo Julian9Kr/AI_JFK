@@ -1,13 +1,15 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-const modules = import.meta.glob('../../content/projects/*.md', { eager: true });
-const projects = Object.values(modules).map(m => m.frontmatter);
-import about from '../../content/about/index.md';
+const modProjects = import.meta.glob('../../content/projects/*.md', { eager: true });
+const projects = Object.values(modProjects).map(m => m.frontmatter);
+const modAbout = import.meta.glob('../../content/about/index.md', { eager: true });
+const aboutData = Object.values(modAbout)[0].frontmatter;
+const aboutHtml = Object.values(modAbout)[0].compiledContent;
 ---
 <BaseLayout>
   <section class="hero" id="home">
-    {about.frontmatter.heroVideo
-      ? <video src={about.frontmatter.heroVideo} autoplay muted loop playsinline/>
+    {aboutData.heroVideo
+      ? <video src={aboutData.heroVideo} autoplay muted loop playsinline/>
       : <h1>Digital Designer &amp; Developer</h1>}
     <p>Creating innovative digital experiences that blend form and function.</p>
     <div class="scroll-indicator">Scroll</div>
@@ -32,12 +34,12 @@ import about from '../../content/about/index.md';
 
   <section class="about" id="about">
     <h2>About</h2>
-    <div class="about-content container" set:html={about.compiledContent}/>
+    <div class="about-content container" set:html={aboutHtml}/>
   </section>
 
   <section class="contact" id="contact">
     <h2>Contact</h2>
-    <div class="contact-info container"><p>{about.frontmatter.contactText}</p><div class="contact-links">{about.frontmatter.contactLinks.map(link=><a href={link.url} class="project-link" target="_blank">{link.label}</a>)}</div></div>
+    <div class="contact-info container"><p>{aboutData.contactText}</p><div class="contact-links">{aboutData.contactLinks.map(link=><a href={link.url} class="project-link" target="_blank">{link.label}</a>)}</div></div>
   </section>
 
   <footer class="footer"><p>&copy; 2025 Julian F. Krueger. All Rights Reserved.</p></footer>

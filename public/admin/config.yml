@@ -13,12 +13,11 @@ collections:
         label: "About Content"
         name: "about"
         fields:
-          - {label: "Hero Video", name: "heroVideo", widget: "file"}
-          - {label: "Body", name: "body", widget: "markdown"}
-          - {label: "Skills", name: "skills", widget: "list"}
-          - {label: "Contact Text", name: "contactText", widget: "string"}
-          - {label: "Contact Links", name: "contactLinks", widget: "list", label: "Links", field:
-              {label:"Link", name:"link", widget:"object", fields:[{label:"Label",name:"label",widget:"string"},{label:"URL",name:"url",widget:"string"}]}}
+          - {label:"Hero Video",name:"heroVideo",widget:"file"}
+          - {label:"Body",name:"body",widget:"markdown"}
+          - {label:"Skills",name:"skills",widget:"list"}
+          - {label:"Contact Text",name:"contactText",widget:"string"}
+          - {label:"Contact Links",name:"contactLinks",widget:"list",label:"Links",field:{label:"Link",name:"link",widget:"object",fields:[{label:"Label",name:"label",widget:"string"},{label:"URL",name:"url",widget:"string"}]}}
   - name: "projects"
     label: "Projects"
     folder: "content/projects"

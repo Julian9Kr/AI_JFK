@@ -1,7 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-const modules = import.meta.glob('../../content/projects/*.md', { eager: true });
-const projects = Object.values(modules).map(m => m.frontmatter);
+const modProjects = import.meta.glob('../../content/projects/*.md', { eager: true });
+const projects = Object.values(modProjects).map(m => m.frontmatter);
 ---
 <BaseLayout>
   <section class="container">

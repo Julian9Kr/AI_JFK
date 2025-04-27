@@ -1,10 +1,16 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import about from '../../content/about/index.md';
+const modAbout = import.meta.glob('../../content/about/index.md', { eager: true });
+const aboutData = Object.values(modAbout)[0].frontmatter;
+const aboutHtml = Object.values(modAbout)[0].compiledContent;
 ---
 <BaseLayout>
   <section class="container">
     <h1>About</h1>
-    <article set:html={about.compiledContent}/>
+    <article set:html={aboutHtml}/>
+    <div class="skills">
+      <h3>Skills</h3>
+      <ul class="skills-list">{aboutData.skills.map(skill=><li>{skill}</li>)}</ul>
+    </div>
   </section>
 </BaseLayout>

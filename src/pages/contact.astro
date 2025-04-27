@@ -1,13 +1,16 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import about from '../../content/about/index.md';
+const modAbout = import.meta.glob('../../content/about/index.md', { eager: true });
+const aboutData = Object.values(modAbout)[0].frontmatter;
 ---
 <BaseLayout>
   <section class="container">
     <h1>Contact</h1>
-    <p>{about.frontmatter.contactText}</p>
+    <p>{aboutData.contactText}</p>
     <div class="contact-links">
-      {about.frontmatter.contactLinks.map(link => <a href={link.url} class="project-link" target="_blank">{link.label}</a>)}
+      {aboutData.contactLinks.map(link=>(
+        <a href={link.url} class="project-link" target="_blank">{link.label}</a>
+      ))}
     </div>
   </section>
 </BaseLayout>
