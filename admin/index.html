@@ -1,25 +1,31 @@
-<!doctype html>
-<html>
-<head>
-  <meta charset="utf-8">
-  <title>Content Manager</title>
-  <!-- Netlify Identity Widget -->
-  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-  <script>
-    if (window.netlifyIdentity) {
-      window.netlifyIdentity.on('init', (user) => {
-        if (!user) {
-          window.netlifyIdentity.on('login', () => {
-            document.location.href = '/admin/';
-          });
-        }
-      });
-    }
-  </script>
-  <!-- Netlify CMS -->
-  <script src="https://unpkg.com/netlify-cms@^2.0.0/dist/netlify-cms.js"></script>
-</head>
-<body>
-  <!-- Netlify CMS ersetzt den Body-Inhalt automatisch -->
-</body>
-</html>
+<BaseLayout>
+  <section class="hero">
+    <div class="hero-overlay"></div>
+    <div class="hero-content container">
+      <h1>Your future storytelling<br/>through AI meets cinema</h1>
+      <p>Julian F. Krueger · AI visuals · Virtual production · Narrative direction</p>
+    </div>
+  </section>
+
+  <section class="section intro">
+    <div class="container">
+      <p>As a creative entrepreneur with 20 years in film, I bridge real-world production and cutting-edge AI to craft immersive narratives.</p>
+    </div>
+  </section>
+
+  <section class="section alt">
+    <div class="container">
+      <h2 class="section-title">Featured Projects</h2>
+      <div class="grid-3">
+        {featured.map(p => (
+          <div class="card">
+            <img src={p.metadata.image} alt={p.metadata.title}/>
+            <h3>{p.metadata.title}</h3>
+            <p>{p.metadata.category}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+  …
+</BaseLayout>
