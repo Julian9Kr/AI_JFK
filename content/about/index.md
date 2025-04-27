@@ -1,19 +1,28 @@
 ---
-title: "About Julian F. Krueger"
+heroHeading: "Digital Designer & Developer"
+heroText: "Creating innovative digital experiences that blend form and function."
 skills:
   - Web Design
   - UX/UI Design
-  - AI Storytelling
-  - Virtual Production
-contactText: "Always open to new projects. Reach out via email."
+  - Frontend Development
+  - HTML/CSS
+  - JavaScript
+  - React
+  - Vue.js
+  - Responsive Design
+  - Visual Storytelling
+  - Digital Strategy
 contactLinks:
   - label: "Email"
-    url: "mailto:hello@julianfkrueger.com"
+    url: "mailto:your.email@example.com"
   - label: "LinkedIn"
-    url: "https://linkedin.com/in/julianfkrueger"
+    url: "https://www.linkedin.com/"
   - label: "GitHub"
-    url: "https://github.com/julianfkrueger"
-heroVideo: "/uploads/hero-bg.mov"
+    url: "https://github.com/"
 ---
 
-<p>I'm Julian F. Krueger, a digital designer and developer with over 20 years in creative storytelling, blending film and cutting-edge AI to craft immersive narratives.</p>
+I'm Julian F. Krueger, a digital designer and developer based in [Your Location]. With over [X] years of experience in the digital space, I specialize in creating compelling visual narratives through innovative design and development.
+
+My approach combines technical expertise with creative vision, resulting in digital experiences that not only function seamlessly but also engage and inspire users.
+
+Throughout my career, I've collaborated with a diverse range of clients, from startups to established brands, helping them elevate their digital presence and connect with their audiences in meaningful ways.

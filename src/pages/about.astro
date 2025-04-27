@@ -1,16 +1,4 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
-const modAbout = import.meta.glob('../../content/about/index.md', { eager: true });
-const aboutData = Object.values(modAbout)[0].frontmatter;
-const aboutHtml = Object.values(modAbout)[0].compiledContent;
+import { redirect } from 'astro/runtime';
+export function get() { return redirect('/#about', 307); }
 ---
-<BaseLayout>
-  <section class="container">
-    <h1>About</h1>
-    <article set:html={aboutHtml}/>
-    <div class="skills">
-      <h3>Skills</h3>
-      <ul class="skills-list">{aboutData.skills.map(skill=><li>{skill}</li>)}</ul>
-    </div>
-  </section>
-</BaseLayout>

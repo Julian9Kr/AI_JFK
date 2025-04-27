@@ -1,16 +1,4 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
-const modAbout = import.meta.glob('../../content/about/index.md', { eager: true });
-const aboutData = Object.values(modAbout)[0].frontmatter;
+import { redirect } from 'astro/runtime';
+export function get() { return redirect('/#contact', 307); }
 ---
-<BaseLayout>
-  <section class="container">
-    <h1>Contact</h1>
-    <p>{aboutData.contactText}</p>
-    <div class="contact-links">
-      {aboutData.contactLinks.map(link=>(
-        <a href={link.url} class="project-link" target="_blank">{link.label}</a>
-      ))}
-    </div>
-  </section>
-</BaseLayout>

@@ -13,19 +13,19 @@ collections:
         label: "About Content"
         name: "about"
         fields:
-          - {label:"Hero Video",name:"heroVideo",widget:"file"}
-          - {label:"Body",name:"body",widget:"markdown"}
-          - {label:"Skills",name:"skills",widget:"list"}
-          - {label:"Contact Text",name:"contactText",widget:"string"}
-          - {label:"Contact Links",name:"contactLinks",widget:"list",label:"Links",field:{label:"Link",name:"link",widget:"object",fields:[{label:"Label",name:"label",widget:"string"},{label:"URL",name:"url",widget:"string"}]}}
+          - {label: "Hero Heading", name: "heroHeading", widget: "string"}
+          - {label: "Hero Text", name: "heroText", widget: "string"}
+          - {label: "Body", name: "body", widget: "markdown"}
+          - {label: "Skills", name: "skills", widget: "list"}
+          - {label: "Contact Text", name: "contactText", widget: "text"}
+          - {label: "Contact Links", name: "contactLinks", widget: "list", label: "Links", field:{label:"Link",name:"link",widget:"object",fields:[{label:"Label",name:"label",widget:"string"},{label:"URL",name:"url",widget:"string"}]}}  
   - name: "projects"
     label: "Projects"
     folder: "content/projects"
     create: true
     slug: "{{slug}}"
     fields:
-      - {label:"Title",name:"title",widget:"string"}
-      - {label:"Image",name:"image",widget:"image"}
-      - {label:"Video",name:"video",widget:"file"}
-      - {label:"Description",name:"description",widget:"markdown"}
-      - {label:"Link",name:"link",widget:"string"}
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Image", name: "image", widget: "image"}
+      - {label: "Description", name: "description", widget: "text"}
+      - {label: "Link", name: "link", widget: "string"}
