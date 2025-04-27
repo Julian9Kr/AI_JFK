@@ -1,14 +1,14 @@
 {
-   "name": "jfk-original-design-cms",
-   "version": "1.0.0",
-   "scripts": {
-     "dev": "astro dev",
-     "build": "astro build"
-   },
--  dependencies: 
-+  "dependencies": 
-   {
-     "astro": "^4.15.0",
-     "netlify-cms": "^latest"
-   }
- }
+  "name": "jfk-original-design-cms",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview"
+  },
+  "dependencies": {
+    "astro": "^4.15.0",
+    "netlify-cms": "^latest",
+    "sharp": "^0.32.0"
+  }
+}
