@@ -9,7 +9,7 @@ collections:
   - name: "about"
     label: "About Page"
     files:
-      - file: "src/content/about.md"
+      - file: "src/content/about/index.md"
         label: "About Content"
         name: "about"
         fields:

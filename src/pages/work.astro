@@ -16,7 +16,7 @@ import projects from '../content/projects/*.md';
     <div id="projects" class="grid" style="grid-template-columns:repeat(3,1fr)">
       {Object.values(projects).map(({ metadata }) => (
         <div class="card" data-cat={metadata.category}>
-          <img src={metadata.image} alt={metadata.title} style="width:100%;border-radius:8px"/>
+          <img src={metadata.image} alt={metadata.title} style="width:100%;"/>
           <h3>{metadata.title}</h3>
         </div>
       ))}

@@ -10,8 +10,8 @@ const featured = Object.values(projects).slice(0,3);
     <h2>Featured Projects</h2>
     <div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(200px,1fr));">
       {featured.map(({ metadata }) => (
-        <div>
-          <img src={metadata.image} alt={metadata.title} style="width:100%;border-radius:8px"/>
+        <div class="card" data-cat={metadata.category}>
+          <img src={metadata.image} alt={metadata.title} style="width:100%;"/>
           <h3>{metadata.title}</h3>
           <p>{metadata.category}</p>
         </div>
