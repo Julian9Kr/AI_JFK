@@ -1,15 +1,12 @@
 {
-  "name": "julian-krueger-portfolio",
-  "type": "module",
+  "name": "jfk-cms-astro-site",
   "version": "1.0.0",
-  "private": true,
   "scripts": {
     "dev": "astro dev",
-    "start": "astro dev",
     "build": "astro build",
     "preview": "astro preview"
   },
   "dependencies": {
-    "astro": "^3.0.0"
+    "astro": "^4.0.0"
   }
 }

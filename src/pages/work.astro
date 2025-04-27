@@ -1,0 +1,33 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import projects from '../content/projects/*.md';
+---
+<BaseLayout>
+  <section class="container">
+    <h1>Portfolio</h1>
+    <label>Filter:</label>
+    <select id="filter" onChange="filterProjects()">
+      <option>All</option>
+      <option>AI storytelling</option>
+      <option>Real Shot / Live Action</option>
+      <option>Virtual Production</option>
+      <option>Post Production</option>
+    </select>
+    <div id="projects" class="grid" style="grid-template-columns:repeat(3,1fr)">
+      {Object.values(projects).map(({ metadata }) => (
+        <div class="card" data-cat={metadata.category}>
+          <img src={metadata.image} alt={metadata.title} style="width:100%;border-radius:8px"/>
+          <h3>{metadata.title}</h3>
+        </div>
+      ))}
+    </div>
+  </section>
+  <script is:inline>
+    function filterProjects() {
+      const val = document.getElementById('filter').value;
+      document.querySelectorAll('.card').forEach(c => {
+        c.style.display = (val==='All'||c.dataset.cat===val)?'block':'none';
+      });
+    }
+  </script>
+</BaseLayout>

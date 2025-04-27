@@ -1,0 +1,10 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import about from '../content/about.md';
+---
+<BaseLayout>
+  <section class="container">
+    <h1>About</h1>
+    <article set:html={about} />
+  </section>
+</BaseLayout>
