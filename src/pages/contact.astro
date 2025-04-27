@@ -1,8 +1,13 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import about from '../../content/about/index.md';
 ---
 <BaseLayout>
-<section class="container">
-<h1>Contact</h1><p><a href="mailto:hello@julianfkrueger.com">Email me</a></p>
-</section>
+  <section class="container">
+    <h1>Contact</h1>
+    <p>{about.frontmatter.contactText}</p>
+    <div class="contact-links">
+      {about.frontmatter.contactLinks.map(link => <a href={link.url} class="project-link" target="_blank">{link.label}</a>)}
+    </div>
+  </section>
 </BaseLayout>

@@ -3,7 +3,8 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import about from '../../content/about/index.md';
 ---
 <BaseLayout>
-<section class="container">
-<article set:html={about.compiledContent}/>
-</section>
+  <section class="container">
+    <h1>About</h1>
+    <article set:html={about.compiledContent}/>
+  </section>
 </BaseLayout>

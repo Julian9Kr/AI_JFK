@@ -1,8 +1,8 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-const modules = import.meta.glob('../content/projects/*.md', { eager: true });
+const modules = import.meta.glob('../../content/projects/*.md', { eager: true });
 const projects = Object.values(modules).map(m => m.frontmatter);
-import about from '../content/about/index.md';
+import about from '../../content/about/index.md';
 ---
 <BaseLayout>
   <section class="hero" id="home">
