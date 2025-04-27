@@ -1,5 +1,5 @@
 {
-  "name": "jfk-cms-astro-site",
+  "name": "jfk-design-cms",
   "version": "1.0.0",
   "scripts": {
     "dev": "astro dev",

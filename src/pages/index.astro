@@ -1,16 +1,57 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-const projects = Object.values(import.meta.glob('../../content/projects/*.md', { eager: true })).map(p => p.frontmatter).slice(0,3);
+import about from '../content/about/index.md';
+import projects from '../content/projects/*.md';
 ---
 <BaseLayout>
-<section class="container">
-  <h1>Future storytelling through AI, grounded in real-world filmmaking.</h1>
-  <p>I'm Julian F. Krueger, specializing in AI visuals, virtual production, and narrative direction.</p>
-  <h2>Featured Projects</h2>
-  <div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(200px,1fr));">
-    {projects.map(p => (
-      <div class="card"><img src={p.image} alt={p.title}/><h3>{p.title}</h3><p>{p.category}</p></div>
-    ))}
-  </div>
-</section>
+  <section class="hero" id="home">
+    <h1>Digital Designer<br>& Developer</h1>
+    <p>Creating innovative digital experiences that blend form and function.</p>
+    <div class="scroll-indicator">Scroll</div>
+  </section>
+
+  <section class="horizontal-section" id="projects">
+    <div class="horizontal-content">
+      {Object.values(projects).map(({ frontmatter }) => (
+        <div class="project-card">
+          <div class="project-image">
+            {frontmatter.video ? <video src={frontmatter.video} controls /> : <img src={frontmatter.image} />}
+          </div>
+          <div class="project-info">
+            <h3>{frontmatter.title}</h3>
+            <p>{frontmatter.description}</p>
+            {frontmatter.link && <a href={frontmatter.link} class="project-link">View Project</a>}
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section class="about" id="about">
+    <h2>About</h2>
+    <div class="about-content container" set:html={about.compiledContent}/>
+    <div class="skills">
+      <h3>Skills</h3>
+      <ul class="skills-list">
+        {about.data.skills.map(skill=><li>{skill}</li>)}
+      </ul>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <h2>Contact</h2>
+    <div class="contact-info container">
+      <p>{about.data.contactText}</p>
+      <div class="contact-links">
+        {about.data.contactLinks.map(link=>(
+          <a href={link.url} class="contact-link" target="_blank">{link.label}</a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-left"><p>&copy; 2025 Julian F. Krueger. All Rights Reserved.</p></div>
+    <div class="footer-right"><ul><li><a href="#projects">Projects</a></li><li><a href="#about">About</a></li><li><a href="#contact">Contact</a></li></ul></div>
+  </footer>
 </BaseLayout>
